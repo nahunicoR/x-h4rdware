@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Nuestro equipo de expertos, capacitados en brindar la mejor atención para resolver tus inquietudes.">
+    <meta name="description" content="venta, asesoramiento, servicio técnico de productos hardware informáticos de alta calidad.">
     <meta name="keywords" content="hardware, servicio técnico, venta, asesoramiento, informática, ordenadores, portátiles, componentes, periféricos">
     <meta name="author" content="Nahuel Riveros, Matías Sáez">
-    <title>Nosotros | X-H4rdware</title>
+    <title>X-H4rdware | Tecnología</title>
     <link rel="stylesheet" href="./css/styles.css">
-    <link rel="icon" href="../index/assets/ico.svg" />
+    <link rel="icon" href="./assets/ico.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500&family=Prompt:ital,wght@0,300;0,400;0,500;0,600;1,300&family=Roboto+Mono:wght@200;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
 </head>
 <body>
     <header>
@@ -23,47 +23,30 @@
             <nav class="nav-container">
                 <ul>
                     <li><a href='../index/index.html' target="_self">Inicio</a></li>
-                    <li><a href='#nosotros'>Nosotros</a></li>
+                    <li><a href='../nosotros/nosotros.html'>Nosotros</a></li>
                     <li><a href='../ayuda.html'>Ayuda</a></li>
                     <li><a href='../marcas/marcas.html'>Marcas Sponsor</a></li>
-                    <li><a href='../products/products.html'>Productos</a></li>
+                    <li><a href='#app'>Productos</a></li>
                     <li><a href='../pc-armadas/pc_armadas.html'>PC Armadas</a></li>
                 </ul>
             </nav>
         </div>
     </header>
-    <main id="nosotros">
-        <section id="central">
-            <img src="./assets/equipo_de_trabajo.jpg" alt="Equipo de Técnicos">
-            <div class="texto">
-                <h1>Nuestro Equipo Técnico</h1>
-                <p>Nuestro equipo de profesionales está altamente capacitado para poder ayudarte en todas tus consultas, sea que necesites servicio técnico, asesoramiento en compras o rendimiento de PC.</p>
+    <div id="app">
+        <div class="card" v-for="product in datos">
+            <div class="card_img">
+                <img class="prod-img" :src="product.image" alt="producto.product_name">
             </div>
-        </section>
-    </main>
-    <section id="asesoria">
-        <div class="texto">
-        <h1>Nuestro Equipo de Asesores</h1>
-            <p>Tu experiencia es nuestra prioridad, por eso es que ofrecemos asesorias sin costo alguno. Podemos ayudarte en tu emprendimiento, en tu definición de compra, en tu nuevo set-up gamer. Acércate y contacta con nosotros.</p>
+            <div class="card_info">
+                <div class="card_titles">
+                    <h3 class="card__title">{{ product.product_name }}</h3>
+                    <h4 class="card__title">{{ product.brand }}</h4>
+                </div>
+                    <p class="card__price">${{ product.price }}</p>
+                <button class="card__btn" >Comprar</button>
+            </div>
         </div>
-        <img src="./assets/equipo-h4rdware.jpg" alt="servicio de Asesorías">
-    </section>
-    <section id="contacto">
-        <h2>Resolvemos tus dudas:</h2>
-        <form action="https://formspree.io/f/xknlpzzb"
-        method="POST">
-            <div class="data">
-                <input type="text" name="nombre" id="nombre" placeholder="Nombre" >
-                <input type="text" name="apellido" id="apellido" placeholder="Apellido" >
-            </div>
-            <div class="data">
-                <input type="email" name="email" id="email" placeholder="Email" >
-                <input type="text" name="telefono" id="telefono" placeholder="Teléfono">
-            </div>
-                <textarea name="mensaje" id="mensaje" cols="30" rows="10" placeholder="Mensaje" ></textarea>
-                <button type="submit">Enviar</button>
-        </form>
-    </section>
+    </div>
     <footer>
         <div class="footer-container">
             <div class="footer-container-social">
@@ -79,5 +62,7 @@
             </div>
         </div>
     </footer>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="./js/main.js"></script>
 </body>
 </html>
