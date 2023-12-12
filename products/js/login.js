@@ -6,6 +6,6 @@ function loguear(){
 
     if(password === 'Admin123' && email === 'administrator'){
         alert('Bienvenido señor Stark!')
-        window.location = 'http://127.0.0.1:5500/X-H4RDWARE/CRUDWEB/productos.html'
+        window.location = 'https://x-h4rdware.netlify.app/X-H4RDWARE/CRUDWEB/productos.html'
     }
 };
