@@ -43,20 +43,20 @@
             <i class="fa-solid fa-xmark" style="color: #fff;"></i>
         </span>
         <div class="form-box login">
-            <h2>Login</h2>
+            <h2>Ya esta Logeado...</h2>
             <form action="">
                 <div class="input-box">
                     <span class="icon">
                         <i class="fa-solid fa-envelope" style="color: #38B6FF;"></i>
                     </span>
-                    <input type="email" name=""required id="email">
-                    <label for="email">Email</label>
+                    <input type="email" name="" disabled v-model="email">
+                    <label for="email">Usuario</label>
                 </div>
                 <div class="input-box">
                     <span class="icon">
                         <i class="fa-solid fa-lock" style="color: #38B6FF;"></i>
                     </span>
-                    <input type="password" name=""required id="password">
+                    <input type="password" name=""disabled v-model="password">
                     <label for="password">Password</label>
                 </div>
                 <div class="remember-forgot">
